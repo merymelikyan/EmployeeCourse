@@ -42,4 +42,3 @@ M - modified  (գիտը տեսել է փոփոխություն ու պահպան
 git init ( կանչում ենք  git ֊ը)
 git statuse (մեր պրոյեկտի ստատուսը )
 git add . (բոլոր  untracted ֆայլ/ֆոլդրները դարձնում ենք added )
-mnbmnb
