@@ -1,5 +1,4 @@
 from django.shortcuts import render
-#from django.http import HttpResponse
 from .models import Department, Employee, About, Contact, Team
 
 def index(request):
@@ -17,8 +16,7 @@ def about(request):
     return render(request, "about.html", {
         "about_text": about_text,
         "team": team
-        })
-
+    })
 
 def contact(request):
     contact_text = Contact.objects.all()
