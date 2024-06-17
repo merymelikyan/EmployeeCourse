@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import (Department, Employee, About, Contact, Team)
-
+from .models import (Department, Employee, About, Contact, Team, Slider)
 
 admin.site.site_header = "Employees Admin"
 admin.site.site_title = "Employees Admin Panel"
 admin.site.index_title = "Welcome dear Employees Admin"
+
 
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ("first_name", "last_name",
@@ -34,3 +34,4 @@ admin.site.register(Employee, EmployeeAdmin)
 admin.site.register(About)
 admin.site.register(Contact)
 admin.site.register(Team)
+admin.site.register(Slider)

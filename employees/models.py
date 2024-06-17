@@ -73,3 +73,16 @@ class Team(models.Model):
         verbose_name_plural = "team"
 
 
+class Slider(models.Model):
+    img = models.ImageField(upload_to="slider")
+    title = models.CharField(max_length=255)
+    descr = models.TextField(max_length=400)
+    link = models.URLField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+    class Meta:
+        verbose_name = "slider"
+        verbose_name_plural = "sliders"
+
