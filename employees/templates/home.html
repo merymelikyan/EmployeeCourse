@@ -3,7 +3,7 @@
 {% block seoBlock %}
   {% for item in seo %}
   <title> {{item.title}} </title>
-  <meta name="title" content="Employees">
+  <meta name="title" content="{{item.title}}">
   <meta name="description" content="{{item.description}}">
   <meta name="keywords" content="{{item.keywords}}">
   <meta name="robots" content="{{item.robots}}">
