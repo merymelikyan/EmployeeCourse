@@ -1,9 +1,23 @@
 from django.shortcuts import render
-from .models import Department, Employee, About, Contact, Team, Slider
+from .models import (
+    Department, 
+    Employee, 
+    About, 
+    Contact, 
+    Team, 
+    Slider,
+    SEO
+    )
+
 
 def index(request):
     slides = Slider.objects.all()
-    return render(request, "home.html", {"slides": slides})
+    seo = SEO.objects.filter(tag="home")
+    return render(request, "home.html", 
+                  {
+                      "slides": slides,
+                      "seo": seo
+                      })
 
 
 def employees(request):
@@ -21,7 +35,9 @@ def about(request):
 
 def contact(request):
     contact_text = Contact.objects.all()
+    seo = SEO.objects.filter(tag="contact")
     return render(request, "contact.html", {"contact_text": contact_text})
+
 
 
 def single_employee(request, employee_id):
