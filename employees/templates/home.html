@@ -1,6 +1,7 @@
 {% extends "base.html"%}
+{% load i18n %}
   
-{% block seoBlock %}
+{% block seo_block %}
   {% for item in seo %}
   <title> {{item.title}} </title>
   <meta name="title" content="{{item.title}}">
@@ -12,10 +13,20 @@
   {% endfor %}
 {% endblock %}
 
+{% block og_block %}
+  {% for item in og %}
+    <meta property="og:title" content="{{item.title}}" />
+    <meta property="og:type" content="{{item.type}}" />
+    <meta property="og:url" content="{{item.url}}" />
+    <meta property="og:image" content="{{item.image.url}}" />
+    <meta property="og:description" content="{{item.description}}" />
+  {% endfor %}
+{% endblock %}
+
 {% block home_template %}  
   <div class="mt-5 text-center">
-    <h1>Welcome to Armenia</h1>
-    <p>This is an our official website</p>
+      <h1>{% trans "Welcome to our website" %}</h1>
+      <p>{% trans "This is our official website" %}</p>
   </div>   
   <div class="mt-5">
     <div class="swiper mySwiper">

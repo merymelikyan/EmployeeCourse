@@ -70,7 +70,7 @@ class Team(models.Model):
 
     class Meta:
         verbose_name = "team"
-        verbose_name_plural = "team"
+        verbose_name_plural = "teams"
 
 
 class Slider(models.Model):
@@ -102,3 +102,20 @@ class SEO(models.Model):
     class Meta:
         verbose_name = "seo"
         verbose_name_plural = "seo"
+
+
+class OG(models.Model):
+    tag = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
+    description = models.TextField(max_length=500)
+    type = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="og")
+    url = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.tag}"
+
+    class Meta:
+        verbose_name = "Open Graph"
+        verbose_name_plural = "Open Graphs"
+
